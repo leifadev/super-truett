@@ -31,10 +31,21 @@ async def on_member_join(member):
 
 
 @bot.command()
+@commands.cooldown(1, 10, commands.BucketType.user)
 async def kawaii(ctx):
     kpics = ['02.gif', 'neko.gif', 'panda.gif', 'shaq.jpeg', '02-2.gif', 'smolcat.png']
     await ctx.channel.purge(limit=1)
     await ctx.channel.send(file=discord.File('pics/' + random.choice(kpics)))
+
+
+@kawaii.error
+async def kawaii_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.channel.purge(limit=1)
+
+
+
+
 
 @bot.command()
 async def help(ctx):
@@ -63,6 +74,11 @@ async def calmdown(ctx):
     except:
         await ctx.author.send("You have to be in a voice channel to use this!")
 
+@calmdown.error
+async def calmdown_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.channel.purge(limit=1)
+
 
 @bot.command()
 @commands.cooldown(1, 20, commands.BucketType.user)
@@ -79,6 +95,13 @@ async def pierre(ctx):
     except:
         await ctx.author.send("You have to be in a voice channel to use this!")
         await ctx.channel.purge(limit=1)
+
+
+@pierre.error
+async def pierre_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.channel.purge(limit=1)
+
 
 
 @bot.command()
