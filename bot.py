@@ -59,7 +59,7 @@ async def kawaii(ctx):
 #    kpics = ['02.gif', 'neko.gif', 'panda.gif', '02-2.gif', 'smolcat.png']
 #    await ctx.channel.send(file=discord.File('pics/' + random.choice(kpics)))
 	tmp = []
-	res = requests.get("https://g.tenor.com/v1/search?key=9474HZRJCXNR&q=anime_girl_kawaii&locale=en_US&contentfilter=medium&limit=50").json()
+	res = requests.get("https://g.tenor.com/v1/search?key=XXXXXXXXX&q=anime_girl_kawaii&locale=en_US&contentfilter=medium&limit=50").json()
 	for count, x in enumerate(res['results']):
 		gif = res['results'][count]['media'][0]['tinygif']['url']
 		tmp.append(gif)
