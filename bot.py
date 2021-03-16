@@ -1,4 +1,4 @@
-from config import BOT
+# from config import BOT
 import discord
 import discord.ext
 from discord.ext import commands
@@ -10,7 +10,7 @@ import requests
 
 intents = discord.Intents.all()
 # initial_extensions = ['cogs.cogs']
-token = BOT['TOKEN']
+# token = BOT['TOKEN']
 bot = commands.Bot(command_prefix=BOT['PREFIX'], intents=intents, help_command=None)
 
 
@@ -56,7 +56,7 @@ async def cool(ctx):
 
 @bot.command()
 async def kawaii(ctx):
-#    kpics = ['02.gif', 'neko.gif', 'panda.gif', '02-2.gif', 'smolcat.png']
+v#    kpics = ['02.gif', 'neko.gif', 'panda.gif', '02-2.gif', 'smolcat.png']
 #    await ctx.channel.send(file=discord.File('pics/' + random.choice(kpics)))
 	tmp = []
 	res = requests.get("https://g.tenor.com/v1/search?key=XXXXXXXXX&q=anime_girl_kawaii&locale=en_US&contentfilter=medium&limit=50").json()
@@ -136,6 +136,28 @@ async def hawaii(ctx):
 async def mute(ctx, user: discord.Member):
     role = get(ctx.guild.roles, name='Member')
     await user.add_roles(member, role)
+
+
+
+
+@bot.command()
+async def play(ctx):
+    channel = ctx.message.author.voice.channel
+    if not voice.is_connected:
+        await channel.connect()
+    else:
+        ctx.channekl.send("Already in a voice channel!")
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        file = ydl.extract_info(url, download=True)
+        path = str(file['title']) + "-" + str(file['id'] + ".mp3")
+
+    voice.play(discord.FFmpegPCMAudio(path), after=lambda x: endSong(guild, path))
+    voice.source = discord.PCMVolumeTransformer(voice_client.source, 1)
+
+    voice = get(bot.voice_clients)
+    voice.source = discord.PCMVolumeTransformer(voice.source)
+
+
 
 
 
