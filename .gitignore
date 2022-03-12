@@ -1,4 +1,5 @@
 config.py
+<<<<<<< Updated upstream
 *.pyc
 .idea/discord.xml
 .idea/inspectionProfiles/profiles_settings.xml
@@ -1036,3 +1037,19 @@ venv/lib/python3.8/site-packages/yarl/_quoting_py.py
 venv/lib/python3.8/site-packages/yarl/_url.py
 venv/lib/python3.8/site-packages/yarl/py.typed
 venv/pyvenv.cfg
+=======
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3.7
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/shelved.patch
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21__2_31_PM__Default_Changelist_.xml
+__pycache__/config.cpython-37.pyc
+*.patch
+*.7
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3
+.idea/shelf/Uncommitted_changes_before_Update_at_2_17_21,_2_31_PM_[Default_Changelist]/python3
+>>>>>>> Stashed changes

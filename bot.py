@@ -6,6 +6,10 @@ from discord.utils import get
 import time
 import random
 import requests
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 intents = discord.Intents.all()
 intents.members = True
@@ -17,12 +21,17 @@ bot = commands.Bot(command_prefix=BOT['PREFIX'], intents=intents, help_command=N
 class MyHelpCommand(commands.MinimalHelpCommand):
     def get_command_signature(self, command):
         return '{0.clean_prefix}{1.qualified_name} {1.signature}'.format(self, command)
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 # Rich Presence
 @bot.event
 async def on_ready():
 	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Truett65"))
 
+<<<<<<< Updated upstream
     
 @bot.event
 async def on_message(ctx):
@@ -57,6 +66,26 @@ async def test(ctx):
     print(ctx.fetch_roles())
                 
                 
+=======
+@bot.event
+async def on_message(ctx):
+    blacklist = [" x", "ily", "xxx"]
+    if ctx.author.id == 815009535063621634:
+        for x in blacklist:
+            if x in ctx.content:
+                await ctx.channel.purge(limit=1)
+                for i in range(1, 5):
+                    await ctx.channel.send("FUCK BOY ALERT")
+    await bot.process_commands(ctx)
+#	mentionL = ["<@!530571508482048511>", "<@!396025519398977548>", "<@!784910255427289118>"]
+#	if ctx.author.id == 518241202886410261:
+#		for x in mentionL:
+#			if x in ctx.content:
+#				print("worked")
+#				for y in range(1, 69):
+#					await ctx.author.send("LMAO UR BAD KID")
+
+>>>>>>> Stashed changes
 
 @bot.event
 async def on_member_join(member):
@@ -68,6 +97,7 @@ async def cool(ctx):
     user = ctx.guild.get_member(530571508482048011)
     await ctx.channel.send(f"{user.mention}")
     print("Ran successfully!")
+<<<<<<< Updated upstream
     
 
 @bot.command()
@@ -94,6 +124,23 @@ async def loli(ctx):
  
   
         
+=======
+
+
+@bot.command()
+async def kawaii(ctx):
+    #    kpics = ['02.gif', 'neko.gif', 'panda.gif', '02-2.gif', 'smolcat.png']
+    #    await ctx.channel.send(file=discord.File('pics/' + random.choice(kpics)))
+    tmp = []
+    res = requests.get("https://g.tenor.com/v1/search?key=9474HZRJCXNR&q=anime_girl_kawaii&locale=en_US&contentfilter=medium&limit=50").json()
+    for count, x in enumerate(res['results']):
+        gif = res['results'][count]['media'][0]['tinygif']['url']
+        tmp.append(gif)
+    #print(tmp)
+    await ctx.channel.send(random.choice(tmp))
+
+
+>>>>>>> Stashed changes
 @bot.command()
 async def help(ctx):
     rembed = discord.Embed(title="I'm Super Truett!", color=0x3a88fe)
@@ -121,8 +168,13 @@ async def calmdown(ctx):
     except:
         await ctx.author.send("You have to be in a voice channel to use this!")
         await ctx.channel.purge(limit=1)
+<<<<<<< Updated upstream
         
         
+=======
+
+
+>>>>>>> Stashed changes
 @calmdown.error
 async def calmdown_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
@@ -150,6 +202,7 @@ async def pierre(ctx):
 
 bot.remove_command("purge")
 @bot.command()
+<<<<<<< Updated upstream
 @commands.has_permissions(administrator=True)
 async def purge(ctx, amount):
     try:
@@ -162,6 +215,10 @@ async def purge(ctx, amount):
 async def pierre_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         await ctx.channel.purge(limit=1)
+=======
+async def hawaii(ctx):
+    await ctx.channel.send(file=discord.File('pics/hawaii.jpeg'))
+>>>>>>> Stashed changes
 
 @bot.event
 async def on_member_join(member):
@@ -201,6 +258,7 @@ ydl_opts = {
 }   
 
 @bot.command()
+<<<<<<< Updated upstream
 async def play(ctx):
     channel = ctx.message.author.voice.channel
     if not voice.is_connected:
@@ -221,6 +279,22 @@ async def play(ctx):
 
     
     
+=======
+async def test(ctx):
+    channelId = bot.get_channel(816361625253838888)
+    await ctx.author.send("Command initiated successfully, *so... it should work right? RIGHT???*")
+    await channelId.edit(name=f'Members: {}')
+
+
+
+
+
+@bot.command()
+async def mute(ctx, user: discord.Member):
+    role = get(ctx.guild.roles, name='Member')
+    await user.add_roles(user, role)
+
+>>>>>>> Stashed changes
 
 
 

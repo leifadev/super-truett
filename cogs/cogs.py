@@ -1,13 +1,27 @@
 from discord.ext import commands
+<<<<<<< Updated upstream
 from ruamel import yaml
+=======
+
+>>>>>>> Stashed changes
 bot = commands.Bot
 
 
 
+<<<<<<< Updated upstream
+=======
+class GeneralCogs(commands.Cog):
+    def __init__(self, bot):from discord.ext import commands
+
+bot = commands.Bot
+
+
+>>>>>>> Stashed changes
 
 class GeneralCogs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+<<<<<<< Updated upstream
 		self.BoostChannelId = int
 		self.MemChannelId = int
 
@@ -56,3 +70,28 @@ class GeneralCogs(commands.Cog):
             
             
             
+=======
+        self.memberCount = None
+        self.boostsCount = None
+
+
+        # Server member and boosts listener
+
+        @commands.Cog.listener()
+        async def on_ready(self, ctx):
+            memChannel = bot.get_channel(816361625253838888)
+            # boostChannel = bot.get_channel(816361946278395943)
+            await bot.VoiceChannel.edit(channel=memChannel, name="Test")
+        self.bot = bot
+        self.memberCount = None
+        self.boostsCount = None
+
+
+        # Server member and boosts listener
+
+        @commands.Cog.listener()
+        async def on_ready(self, ctx):
+            memChannel = bot.get_channel(816361625253838888)
+            # boostChannel = bot.get_channel(816361946278395943)
+            await bot.VoiceChannel.edit(channel=memChannel, name="Test")
+>>>>>>> Stashed changes
